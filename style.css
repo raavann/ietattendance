@@ -1,0 +1,23 @@
+* {
+    padding: 0px;
+    margin: 0px;
+
+}
+body {
+    background: #f06d06;
+    padding: 3%;
+    font-family: sans-serif;
+    margin: 6%;
+    max-width: 50%;;
+}
+
+.form {
+    background:white;
+    font-family: sans-serif;
+    font-size: 150%;
+    width: 60%;
+    height: 10%;
+    padding: auto;
+    text-align: center;
+    border-radius: 60px;
+}

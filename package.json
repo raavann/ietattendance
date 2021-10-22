@@ -15,8 +15,10 @@
   "bugs": {
     "url": "https://github.com/raavann/ietattendance/issues"
   },
-  "homepage": "https://github.com/raavann/ietattendance#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
   }
 }

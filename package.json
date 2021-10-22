@@ -1,0 +1,25 @@
+{
+  "name": "ietattendance",
+  "version": "1.0.0",
+  "description": "Website for auto attendance, only for coordinators",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raavann/ietattendance.git"
+  },
+  "author": "raavann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raavann/ietattendance/issues"
+  },
+  "homepage": "https://github.com/raavann/ietattendance#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}

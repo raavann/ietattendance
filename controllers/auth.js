@@ -2,7 +2,7 @@ const mysql = require('mysql');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
-
+const url = require('url')
 dotenv.config();
 
 const conn = mysql.createConnection({
@@ -17,7 +17,7 @@ exports.login = async (req, res) => {
         const {email, password} = req.body;
         await conn.query(`select * from logins where email = '${email}'`, (error, results) => {
             if (results.length==0 || (results[0].password!=password)){
-                res.status(401).render('login', {
+                res.redirect('/login', {
                     message : "Email or Password is incorrect!"
                 });
             } else {

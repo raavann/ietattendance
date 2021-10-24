@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 //view engine
-app.set('view engine', 'hbs')
+app.set('view engine', 'ejs')
 
 //routes
 app.use('/', require('./routes/pages'));

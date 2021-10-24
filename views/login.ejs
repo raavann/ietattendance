@@ -4,40 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Auto Attendance</title>
-    <style>
-
-        * {
-        padding: 0px;
-        margin: 0px;
-        }
-
-        body {
-            background: #f06d06;
-            font-family: sans-serif;
-            padding: 40px;
-        }
-
-        .form {
-            background:white;
-            font-family: sans-serif;
-            font-size: 150%;
-            padding: auto;
-            text-align: center;
-            border-radius: 60px;
-            width: 35%;
-            padding: auto;
-            margin: auto;
-            display: block;
-            align-content: center;
-            height: 500px;
-        }
-
-    </style>
+    
 </head>
 <body>
-    <form class="form" action="/login" method="post">
+    <form class="form" action="/auth/login" method="post">
         <h1>Login</h1>
         <div>
             <label for="email">Email</label>
@@ -48,8 +20,8 @@
             <input type="password" name="password" id="password" placeholder="Enter Password" required>
         </div>
         <button type="submit">Login</button>
+        <a href="/">Go back</a>
     </form>
     
-    <a href="/">Go back to front page</a>
 </body>
 </html>

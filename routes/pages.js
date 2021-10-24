@@ -11,12 +11,9 @@ router.get('/login', (req, res) => {
 })
 
 router.get('/home',authController.isLoggedIn, (req, res) => {
-    console.log('inside get/home')
     if (req.user){
-        console.log('user found going/home')
-        res.render('/home');
+        res.render('home');
     } else {
-        console.log('user not found going /login')
         res.redirect('/login');
     }
     

@@ -24,6 +24,7 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "debug": "^4.3.2",
     "dotenv": "^10.0.0",
     "nodemon": "^2.0.14"
   }

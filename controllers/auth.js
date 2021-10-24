@@ -12,12 +12,14 @@ const conn = mysql.createConnection({
     database : process.env.DBLOGIN
 });
 
-exports.login = (req, res) => {
+exports.login = async (req, res) => {
     try {
         const {email, password} = req.body;
-        conn.query(`select * from logins where email = '${email}'`, (error, results) => {
+        await conn.query(`select * from logins where email = '${email}'`, (error, results) => {
             if (results.length==0 || (results[0].password!=password)){
-                res.status(401).render('login');
+                res.status(401).render('login', {
+                    message : "Email or Password is incorrect!"
+                });
             } else {
                 const id = results[0].id;
                 const token = jwt.sign({id}, process.env.SESSION_SECRET, {
@@ -32,8 +34,7 @@ exports.login = (req, res) => {
                 }
     
                 res.cookie('jwt', token, cookieOptions );
-                console.log('inside login->post');
-                res.status(200).redirect('/home');
+                res.redirect('/home');
             }
         });
     } catch (error) {
@@ -43,24 +44,26 @@ exports.login = (req, res) => {
 }
 
 exports.isLoggedIn = async (req, res, next) => {
-    console.log('inside isloggedin')
-    if (req.cookies.jwt){
-        try {
-            const decoded =  await promisify(jwt.verify)(req.cookies.jwt, process.env.SESSION_SECRET);
-            conn.query(`select * from logins where id = ${decoded.id}`, (error,results)=>{
-                if(results.length == 0){
+    try{
+        if (req.cookies.jwt){
+            try {
+                const decoded =  await promisify(jwt.verify)(req.cookies.jwt, process.env.SESSION_SECRET);
+                conn.query(`select * from logins where id = ${decoded.id}`, (error,results)=>{
+                    if(results.length == 0){
+                        return next();
+                    }
+                    req.user = results[0];
                     return next();
-                }
-                req.user = results[0];
-            });
+                });
 
-        } catch(error) {
-            console.log(error);
-            return next();
+            } catch(error) {
+                console.log(error);
+                return next();
+            }
+        } else{
+            next();
         }
-    } else{
-        next();
+    } catch(error){
+        console.log(error);
     }
-    console.log('inside isloggedin outer->next() executed')
-    next();
 }

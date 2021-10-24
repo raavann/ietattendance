@@ -32,7 +32,7 @@ exports.login = (req, res) => {
                 }
     
                 res.cookie('jwt', token, cookieOptions );
-                console.log('im rendereng home');
+                console.log('inside login->post');
                 res.status(200).redirect('/home');
             }
         });
@@ -43,6 +43,7 @@ exports.login = (req, res) => {
 }
 
 exports.isLoggedIn = async (req, res, next) => {
+    console.log('inside isloggedin')
     if (req.cookies.jwt){
         try {
             const decoded =  await promisify(jwt.verify)(req.cookies.jwt, process.env.SESSION_SECRET);
@@ -60,5 +61,6 @@ exports.isLoggedIn = async (req, res, next) => {
     } else{
         next();
     }
-    
+    console.log('inside isloggedin outer->next() executed')
+    next();
 }

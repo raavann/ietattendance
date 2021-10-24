@@ -17,9 +17,7 @@ exports.login = async (req, res) => {
         const {email, password} = req.body;
         await conn.query(`select * from logins where email = '${email}'`, (error, results) => {
             if (results.length==0 || (results[0].password!=password)){
-                res.redirect('/login', {
-                    message : "Email or Password is incorrect!"
-                });
+                res.redirect('/login')
             } else {
                 const id = results[0].id;
                 const token = jwt.sign({id}, process.env.SESSION_SECRET, {

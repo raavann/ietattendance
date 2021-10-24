@@ -2,7 +2,16 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/auth');
 
-router.get('/', (req, res) => {
+router.get('/',authController.isLoggedIn, (req, res) => {
+    if (req.user){
+        res.render('home');
+    } else {
+        res.redirect('/login');
+    }
+    
+})
+
+router.get('/info', (req, res) => {
     res.render('front');
 })
 

@@ -2,7 +2,6 @@ const mysql = require('mysql');
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
-const url = require('url')
 dotenv.config();
 
 const conn = mysql.createConnection({
@@ -63,5 +62,6 @@ exports.isLoggedIn = async (req, res, next) => {
         }
     } catch(error){
         console.log(error);
+        next();
     }
 }

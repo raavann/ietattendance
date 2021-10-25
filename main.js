@@ -1,25 +1,32 @@
-//express
-const cookieParser = require('cookie-parser')
 const express = require('express')
+const morgan = require('morgan');
+const bodyparser = require('body-parser');
+const cookieParser = require('cookie-parser')
+const path = require('path')
+
 const app = express()
 
-//path for public css
-const path = require('path')
-const publicDirectory = path.join(__dirname,  './public');
-app.use(express.static(publicDirectory));
+// log requests
+app.use(morgan('tiny'));
 
 app.use(express.urlencoded({ extended: false }))
-app.use(express.json());
+app.use(express.json() );
 app.use(cookieParser());
 
-//view engine
+// view engine
 app.set('view engine', 'ejs')
+// app.set("views", path.resolve(__dirname, "views/ejs"))
 
-//routes
-app.use('/', require('./routes/pages'));
-app.use('/auth', require('./routes/auth'));
+// path for assets
+app.use('/css', express.static(path.resolve(__dirname, "assets/css")));
+app.use('/img', express.static(path.resolve(__dirname, "assets/img")));
+app.use('/js', express.static(path.resolve(__dirname, "assets/js")));
 
-//ports
+// routes
+app.use('/', require('./server/routes/pages'));
+app.use('/auth', require('./server/routes/auth'));
+
+// ports
 const port = process.env.PORT || 3000
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

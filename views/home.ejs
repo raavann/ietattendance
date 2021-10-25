@@ -1,1 +1,42 @@
-<h1>home</h1>
+<!-- include header -->
+<%- include('include/_header') %> 
+<!-- /include header -->
+
+        <!-- Main site -->
+
+        <main id="site-main">
+            <div class="container">
+                <div class="box-nav d-flex justify-between">
+                    <a href="/add" class="border-shadow">
+                        <span class="text-gradient">New Entry<i class="fas fa-user-ninja"></i></span>
+                    </a>
+                </div>
+    
+                <!-- form handling -->
+                <form action="/" method="post">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Sr. No</th>
+                                <th>Teacher</th>
+                                <th>Start from</th>
+                                <th>End at</th>
+                                <th>Link</th>
+                                <th>Actions</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%- include('include/_show') %> 
+                        </tbody>
+                    </table>
+                </form>
+    
+            </div>
+        </main>
+    
+    <!-- /Main Site -->
+
+
+<!-- include footer -->
+    <%- include('include/_footer') %> 
+<!-- /include footer -->

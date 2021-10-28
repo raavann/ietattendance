@@ -18,8 +18,7 @@ exports.login = async (req, res) => {
             if (results.length==0 || (results[0].password!=password)){
                 res.redirect('/login')
             } else {
-                const id = results[0].id;
-                const token = jwt.sign({id}, process.env.SESSION_SECRET, {
+                const token = jwt.sign({id : results[0].id , allocation : results[0].allocation}, process.env.SESSION_SECRET, {
                     expiresIn : process.env.EXPIRE
                 });
     

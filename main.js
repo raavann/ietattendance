@@ -25,6 +25,7 @@ app.use('/js', express.static(path.resolve(__dirname, "assets/js")));
 // routes
 app.use('/', require('./server/routes/pages'));
 app.use('/auth', require('./server/routes/auth'));
+app.use('/api' , require('./server/routes/api'))
 
 // ports
 const port = process.env.PORT || 3000

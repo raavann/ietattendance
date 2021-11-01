@@ -2,7 +2,9 @@ exports.homeRoutes = (req, res)=>{
     if (req.user){
         res.render('home');
     } else {
-        res.redirect('/login');
+        res.render('login', {
+            msg : ""
+        });
     }
 }
 
@@ -11,7 +13,7 @@ exports.infoRoutes = (req, res)=>{
 }
 
 exports.loginRoutes = (req, res)=>{
-    res.render('login');
+    res.render('login' , { msg : "" });
 }
 
 exports.addRoutes = (req, res)=>{

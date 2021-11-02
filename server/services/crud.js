@@ -24,7 +24,7 @@ module.exports = {
                 return callBack(null, results);
             });
         } else {
-            pool.query(`select * from ${allocation} where id = ${id}`, (error, results, fields) => {
+            pool.query(`select * from ${allocation} where id = ${id} order by st asec`, (error, results, fields) => {
                 if (error) {
                     callBack(error);
                 }

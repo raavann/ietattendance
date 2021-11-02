@@ -16,7 +16,7 @@ exports.homeRoutes = (req, res)=>{
         
     } else {
         res.render('login', {
-            msg : "Try logging in again!"
+            msg : ""
         });
     }
 }

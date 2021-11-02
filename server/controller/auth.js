@@ -61,26 +61,11 @@ exports.isLoggedIn = async (req, res, next) => {
     }
 }
 
-exports.checkToken = (req, res, next) => {
-    let token = req.get("authorization");
-    if (token) {
-      // Remove Bearer from string
-        token = token.slice(7);
-        jwt.verify(token, process.env.SESSION_SECRET, (err, decoded) => {
-            if (err) {
-                return res.json({
-                    success: 0,
-                    message: "Invalid Token..."
-                });
-            } else {
-                req.decoded = decoded;
-                next();
-            }
-        });
-    } else {
-        return res.json({
-            success: 0,
-            message: "Access Denied! Unauthorized User"
-        });
-    }
+exports.logout = async (req, res) => {
+    res.cookie('jwt' , 'loggingOut', {
+        expiresIn : new Date(Date.now() + 2*1000),
+        httpOnly : true
+    });
+
+    res.status(200).redirect('/');
 }

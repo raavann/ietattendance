@@ -3,7 +3,7 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const { promisify } = require('util');
 
-const conn = require('../../server/database/db')
+const conn = require('../database/dblogin')
 
 exports.login = async (req, res) => {
     try {

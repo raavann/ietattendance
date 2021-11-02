@@ -1,6 +1,5 @@
 const express = require('express')
 const morgan = require('morgan');
-const bodyparser = require('body-parser');
 const cookieParser = require('cookie-parser')
 const path = require('path')
 
@@ -12,6 +11,7 @@ app.use(morgan('tiny'));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json() );
 app.use(cookieParser());
+
 
 // view engine
 app.set('view engine', 'ejs')

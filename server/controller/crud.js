@@ -1,32 +1,11 @@
 require('dotenv').config();
 
 const crud = require('../services/crud');
-const { verify } = require('jsonwebtoken');
 
-function auth(req, res) {
-    if(!req.body){
-        res.status(400).send({
-            message : "Entries can not be empty!"
-        });
-        return true;
-    }
-
-    // if(!req.cookies.jwt){
-    //     // logout here
-    //     res.status(400).send({
-    //         message : "Please login again!"
-    //     });
-    //     return true;
-    // }
-
-    return false;
-}
 
 // create and add new data into table
 exports.add = (req,res)=>{
-    if(auth(req,res)) {return;}
-
-    req.body.allocation = 'civil1'//verify(req.cookies.jwt, process.env.SESSION_SECRET).result.allocation;
+    req.body.allocation = req.params.allocation;
 
     crud.add(req.body , (err, results) => {
         if (err) {
@@ -36,18 +15,15 @@ exports.add = (req,res)=>{
                 message : "Database connection error!"
             });
         }
-        return res.status(200).json({
-            success : 1,
-            data : results
-        });
+        return res.status(200).render('./add' , {allocation : req.params.allocation})
     });
 }
 
 // retrieve and return all/one data from table, if id = 0, returns all entries
 exports.find = (req,res) => {
-    const id = req.params.id;
-    const allocation = verify(req.cookies.jwt, process.env.SESSION_SECRET).result.allocation;
-    
+    const id = req.query.id || -1;
+    const allocation = req.params.allocation;
+
     crud.find(allocation, id , (err, results) => {
         if (err) {
             console.log(err);
@@ -70,12 +46,9 @@ exports.find = (req,res) => {
 
 //update a new field
 exports.update = async (req,res) => {
-    if(auth(req,res)) {return;}
-
     req.body.id = req.params.id;
-    req.body.allocation = verify(req.cookies.jwt, process.env.SESSION_SECRET).result.allocation;
+    req.body.allocation = req.params.allocation;
 
-    // const {subject , starttime, endtime, link} = req.body;
     crud.update (req.body, (err, results) => {
         if(err){
             console.log(err);
@@ -92,9 +65,8 @@ exports.update = async (req,res) => {
 
 // delete a field
 exports.delete = async (req, res) => {
-    if(auth(req,res)) {return;}
     req.body.id = req.params.id;
-    req.body.allocation = verify(req.cookies.jwt, process.env.SESSION_SECRET).result.allocation;
+    req.body.allocation = req.params.allocation;
 
     crud.delete (req.body , (err, results) => {
         if (err) {

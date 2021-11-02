@@ -1,4 +1,4 @@
-const pool = require('../database/db');
+const pool = require('../database/dbtt');
 
 module.exports = {
     add: (data, callBack) => {
@@ -16,7 +16,7 @@ module.exports = {
     },
 
     find: (allocation, id, callBack) => {
-        if (id == 0){
+        if (id == -1){
             pool.query(`select * from ${allocation}`, (error, results, fields) => {
                 if (error) {
                     callBack(error);
@@ -35,9 +35,7 @@ module.exports = {
     },
 
     update: (data, callBack) => {
-        pool.query( `update ${data.allocation} set 
-            subject=${data.subject}, starttime=${data.starttime}, endtime=${data.endtime}, link=${data.link}
-            where id = ${data.id}`,
+        pool.query( `update ${data.allocation} set sub='${data.subject}', st='${data.starttime}', et='${data.endtime}', link='${data.link}' where id = ${data.id}`,
         
             (error, results, fields) => {
                 if (error) {
@@ -53,10 +51,10 @@ module.exports = {
         pool.query(
             `delete from ${data.allocation} where id = ${data.id}`,
             (error, results, fields) => {
-            if (error) {
-                callBack(error);
-            }
-            return callBack(null, results[0]);
+                if (error) {
+                    callBack(error);
+                }
+                return callBack(null, results[0]);
             }
         );
     }

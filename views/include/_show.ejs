@@ -1,15 +1,40 @@
-<tr>
-    <td>1</td>
-    <td>Ashish</td>
-    <td>3:30PM</td>
-    <td>4:30PM</td>
-    <td>https://meet.google.com/adfr-dert-dff</td>
-    <td>
-        <a href="/update" class="btn border-shadow update">
-            <span class="text-gradient"><i class="fas fa-pen-alt"></i></span>
-        </a>
-        <a href="#" class="btn border-shadow update">
-            <span class="text-gradient"><i class="far fa-trash-alt"></i></span>
-        </a>
-    </td>
-</tr>
+<% for( let i = 0; i < data.length; i++ ) { %>
+
+    <tr>
+        <td><%= i + 1%> </td>
+        <td><%= data[i].sub %> </td>
+        <td><%
+            s=new Date(data[i].st); 
+            s = s.toLocaleString( 'en-IN',{
+                weekday: 'short', 
+                day: 'numeric',
+                month: 'short', 
+                hour: 'numeric', 
+                minute: 'numeric', 
+            }); %> 
+            <%= s %> 
+        </td>
+        <td><%
+            e=new Date(data[i].et); 
+            e = e.toLocaleString( 'en-IN',{
+                weekday: 'short', 
+                day: 'numeric',
+                month: 'short', 
+                hour: 'numeric', 
+                minute: 'numeric', 
+            }); %> 
+            <%= e %> 
+        </td>
+        <td><%= data[i].link %> </td>
+        <td>
+            <a href="/update/<%= allocation %>?id=<%= data[i].id %> " class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pen-alt"></i></span>
+            </a>
+
+            <a class="btn border-shadow delete" data-id="<%= data[i].id %>" data-allocation="<%= allocation %>">
+                <span class="text-gradient"><i class="far fa-trash-alt"></i></span>
+            </a>
+        </td>
+    </tr>
+
+<% } %>

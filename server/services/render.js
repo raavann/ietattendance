@@ -21,8 +21,8 @@ exports.homeRoutes = (req, res)=>{
     }
 }
 
-exports.infoRoutes = (req, res)=>{
-    res.render('info');
+exports.aboutRoutes = (req, res)=>{
+    res.render('about');
 }
 
 exports.loginRoutes = (req, res)=>{

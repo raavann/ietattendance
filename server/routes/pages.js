@@ -8,7 +8,7 @@ router.get('/',authController.isLoggedIn, services.homeRoutes)
 router.get('/home',authController.isLoggedIn, services.homeRoutes)
 
 
-router.get('/info', services.infoRoutes)
+router.get('/about', services.aboutRoutes)
 router.get('/login', services.loginRoutes)
 
 // time table managements

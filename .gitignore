@@ -3,3 +3,4 @@ config.*
 .env
 .vscode
 test.js
+test.html

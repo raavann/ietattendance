@@ -7,6 +7,10 @@
     --border-btn: #edf2f4;
 }
 
+a:hover {
+    cursor: pointer;
+}
+
 * {
     padding: 0;
     margin: 0;

@@ -1,0 +1,133 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(164, 194, 221);
+    transition: 'background-color 1500ms ease';
+}
+
+.scroller{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    scroll-behavior: smooth;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.scroller section {
+    width: 100%;
+    min-height: 100vh;
+    background-size:  cover;
+    scroll-snap-align: start;
+}
+
+.landing {
+    max-height: 100vh;
+    text-overflow: clip;
+    overflow:hidden;
+    z-index: -100;
+}
+
+.landing p {
+    color: #FEF9EF;
+    font-size: 24vh;
+    letter-spacing: -10px;
+    line-height: 80px;
+    word-wrap: break-word;
+    z-index: -10;
+}
+
+canvas{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+img{
+    height: 150px;
+}
+
+.info {
+    scroll-behavior: smooth;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.info span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: row;
+    padding: 30px;
+    opacity: 0;
+
+    scroll-snap-align: start;
+}
+
+.info span p {
+    width: 30vh;
+    display: block;
+    padding: 30px;
+}
+
+.setup{
+    display: flex;
+    flex-direction: column;
+}
+
+#setup-info {
+    padding: 10vh 2vh 5vh 2vh;
+    background-color: white;
+}
+
+.moderators h1 {
+    padding: 10vh 0 0 0;
+    background-color: black;
+    color: white;
+    text-align: right;
+    font-size: 10vw;
+    line-height: 35px;
+}
+
+.content {
+    display: block;
+    padding: 10vh 10vh;
+    text-align: center;
+}
+
+.users h1 {
+    padding: 10vh 0 0 0;
+    background-color: white;
+    color: black;
+    font-size: 10vw;
+    line-height: 35px;
+}
+
+.setup {
+    background-color: #FF4646;
+}
+
+@media (max-width: 640px) 
+{
+    .bigscreen
+    {
+        display: none;
+    }
+
+    .moderators h1 {
+        font-size: 15vw;
+    }
+    .content {
+        padding: 10vh 2vh;
+    }
+    .users h1 {
+        font-size: 15vw;
+    }
+}

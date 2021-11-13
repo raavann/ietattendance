@@ -16,7 +16,7 @@
         <form class="form" action="/auth/login" method="post">
     
             <h1>Sign in</h1>
-    
+            <p style="font-size: 12px; color: red;"><%= msg %> </p>
             <div class ="field" id="email-field">
                 <label for="email"><i class="fas fa-user"></i></label>
                 <input type="email" name="email" id="email" placeholder="Email" required>
@@ -37,6 +37,7 @@
     
         </form>
         <script src="/js/login.js"></script>
+        <script src="/js/bubble.js"></script>
     </main>
 </body>
 </html>

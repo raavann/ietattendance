@@ -4,7 +4,8 @@
   "description": "Website for auto attendance, only for coordinators",
   "main": "main.js",
   "scripts": {
-    "devStart": "nodemon main.js"
+    "devStart": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

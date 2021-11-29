@@ -27,7 +27,7 @@ $("#update").submit(function(event){
 })
 
 if(window.location.pathname == "/home"){
-    $ondelete = $(".table tbody td a.delete");
+    $ondelete = $("#delete");
     $ondelete.click(function(){
         var id = $(this).attr("data-id")
         var allocation = $(this).attr("data-allocation")

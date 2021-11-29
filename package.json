@@ -2,10 +2,9 @@
   "name": "ietattendance",
   "version": "1.0.0",
   "description": "Website for auto attendance, only for coordinators",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "devStart": "nodemon index.js",
-    "start": "node index.js"
+    "devStart": "nodemon main.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +32,6 @@
   "devDependencies": {
     "debug": "^4.3.2",
     "dotenv": "^10.0.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.14"
   }
 }

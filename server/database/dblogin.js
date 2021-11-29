@@ -10,7 +10,6 @@ const pool = createPool({
     connectionLimit : 10
 });
 
-// pool.query('select * from logins');
 // pool.query(
 //     `select * from logins`,
 

@@ -37,6 +37,7 @@ exports.addRoutes = (req, res)=>{
 exports.updateRoutes = (req, res)=>{
     const allocation = req.params.allocation;
     const id = req.query.id;
+    console.log(allocation, id)
     axios.get(`http://localhost:${port}/api/find/${allocation}?id=${id}`)
     .then( function (response) {
         res.render('update', { allocation : allocation, data : response.data.data[0]});

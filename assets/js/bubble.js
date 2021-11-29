@@ -165,4 +165,17 @@ window.onload = function () {
   document.querySelector('body').addEventListener('touchmove', (event)=>{
     blobs.push( new Blob(event.pageX,event.pageY) );
   });
+
+  const stop = document.querySelector('#stop');
+  stop.addEventListener('click', ()=>{
+    if(create){
+      create = false;
+      stop.innerHTML = "Start Animation!"
+    } else {
+      create = true;
+      stop.innerHTML = "Stop Animation!"
+      loop();
+    }
+
+  });
 };

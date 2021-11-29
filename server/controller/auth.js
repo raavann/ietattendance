@@ -8,7 +8,7 @@ const conn = require('../database/dblogin')
 exports.login = async (req, res) => {
     try {
         const {email, password} = req.body;
-        await conn.query(`select * from logins where email = '${email}'`, (error, results) => {
+        conn.query(`select * from logins where email = '${email}'`, (error, results) => {
             if (!results || results.length==0 || (results[0].password!=password)){
                 res.render('login' , { msg : "Try again! Invalid email or password!" })
             } else {
@@ -24,7 +24,6 @@ exports.login = async (req, res) => {
                     httpOnly : true
                 }
                 
-                console.log(token);
                 res.cookie('jwt', token, cookieOptions );
                 res.redirect('/home');
             }

@@ -26,18 +26,3 @@ password.addEventListener('blur', (event)=>{
     passDiv.style.borderColor = 'black';
     passDiv.style.boxShadow = 'none';
 });
-
-window.onload = function () {
-  const stop = document.querySelector('#stop');
-  stop.addEventListener('click', ()=>{
-    if(create){
-      create = false;
-      stop.innerHTML = "Start Animation!"
-    } else {
-      create = true;
-      stop.innerHTML = "Stop Animation!"
-      loop();
-    }
-
-  });
-}

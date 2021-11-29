@@ -2,7 +2,7 @@
   "name": "ietattendance",
   "version": "1.0.0",
   "description": "Website for auto attendance, only for coordinators",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "devStart": "nodemon index.js",
     "start": "node index.js"

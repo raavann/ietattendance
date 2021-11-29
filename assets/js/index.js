@@ -26,7 +26,7 @@ $("#update").submit(function(event){
 
 })
 
-if(window.location.pathname == "/home"){
+if(window.location.pathname == "/" || window.location.pathname == "/home"){
     $ondelete = $("#delete");
     $ondelete.click(function(){
         var id = $(this).attr("data-id")

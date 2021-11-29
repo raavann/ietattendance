@@ -1,4 +1,4 @@
-const { createPool } = require('mysql');
+const { createPool } = require('mysql2');
 
 require('dotenv').config();
 
@@ -10,4 +10,13 @@ const pool = createPool({
     connectionLimit : 10
 });
 
+// pool.query('select * from logins');
+// pool.query(
+//     `select * from logins`,
+
+//     (error, results, fields) => {
+//         console.log(error);
+//         console.log(results);
+//     }
+// );
 module.exports = pool;

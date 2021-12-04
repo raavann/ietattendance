@@ -14,12 +14,5 @@ export NVM_DIR="$HOME/.nvm"
 #install node modules
 npm install
 
-# install pm2 global
-sudo npm i pm2 -g
-
 #start our node app in the background
-# node main.js > app.out.log 2> app.err.log < /dev/null &
-pm2 start main
-
-# to make sure app restarts after reboot
-pm2 startup ubuntu
+node main.js > app.out.log 2> app.err.log < /dev/null & 

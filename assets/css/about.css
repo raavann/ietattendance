@@ -114,6 +114,29 @@ img{
     background-color: #FF4646;
 }
 
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+}
+
+.footer p {
+    margin-top: -2%;
+    align-self: center;
+}
+
+a:link {
+    color: darkblue;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    color : aliceblue;
+}
+a:active{
+    color:#FF4646;
+}
 @media (max-width: 640px) 
 {
     .bigscreen

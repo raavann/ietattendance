@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
+<style type="text/css">
+	
+		.st0{clip-path:url(#SVGID_00000131349292882728669610000006014364693917150369_);fill:black;stroke:black;stroke-width:40;stroke-miterlimit:10;}
+	
+		.st1{clip-path:url(#SVGID_00000115484101302940241210000008623433719972851334_);fill:black;stroke:#000000;stroke-width:40;stroke-miterlimit:10;}
+</style>
+<g>
+	<g>
+		<g id="_x3C_Mirror_Repeat_x3E__00000110438904481126832030000002482175044671608448_">
+			<g>
+				<defs>
+					<rect id="SVGID_1_" x="22.15" y="237.71" width="517.85" height="604.57"/>
+				</defs>
+				<clipPath id="SVGID_00000005947301162156782930000014593414749086640784_">
+					<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+				</clipPath>
+				
+					<path style="clip-path:url(#SVGID_00000005947301162156782930000014593414749086640784_);fill:none;stroke:#000000;stroke-width:40;stroke-miterlimit:10;" d="
+					M888.61,817.04L194.14,262.95C170.59,280.44,48.37,374.73,42.38,528.2c-6.53,167.52,130.61,273.1,151.76,288.84
+					c231.49-184.7,462.98-369.39,694.48-554.09"/>
+			</g>
+		</g>
+		<g id="_x3C_Mirror_Repeat_x3E__00000102537362368307759180000001724140398753381051_">
+			<g>
+				<defs>
+					<rect id="SVGID_00000103231033029797984010000004936603859881618569_" x="540" y="237.71" width="517.85" height="604.57"/>
+				</defs>
+				<clipPath id="SVGID_00000047767108765505048090000017080641855786206370_">
+					<use xlink:href="#SVGID_00000103231033029797984010000004936603859881618569_"  style="overflow:visible;"/>
+				</clipPath>
+				
+					<path style="clip-path:url(#SVGID_00000047767108765505048090000017080641855786206370_);fill:none;stroke:#000000;stroke-width:40;stroke-miterlimit:10;" d="
+					M191.39,817.04l694.48-554.09c23.54,17.49,145.77,111.78,151.76,265.24c6.53,167.52-130.61,273.1-151.76,288.84
+					c-231.49-184.7-462.98-369.39-694.48-554.09"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

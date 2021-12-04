@@ -29,6 +29,7 @@
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
+    "pm2": "^5.1.2",
     "sass": "^1.43.4"
   },
   "devDependencies": {

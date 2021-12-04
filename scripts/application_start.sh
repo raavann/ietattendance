@@ -14,6 +14,8 @@ export NVM_DIR="$HOME/.nvm"
 #install node modules
 npm install
 
+# install pm2 global
+sudo npm i pm2 -g
 
 #start our node app in the background
 # node main.js > app.out.log 2> app.err.log < /dev/null &

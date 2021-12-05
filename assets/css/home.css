@@ -83,6 +83,7 @@ a {
 table{
     border-spacing: 0px;
     width: 100%;
+    opacity: .93;
 }
 
 .table td, .table th{

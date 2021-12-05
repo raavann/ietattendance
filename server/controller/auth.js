@@ -46,7 +46,7 @@ exports.isLoggedIn = async (req, res, next) => {
                     req.user = results[0];
                     return next();
                 });
-
+                
             } catch(error) {
                 console.log(error);
                 return next();

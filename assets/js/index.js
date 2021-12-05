@@ -1,8 +1,9 @@
+const port = 3000;
+const adrs = '65.0.184.222'
+
 $("#add").submit( function (event) {
     alert("Data inserted successfully!");
 });
-
-
 
 $("#update").submit(function(event){
     event.preventDefault();
@@ -15,7 +16,7 @@ $("#update").submit(function(event){
     })
 
     var request = {
-        "url" : `http://localhost:3000/api/update/${data.allocation}/${data.id}`,
+        "url" : `http://${adrs}:${port}/api/update/${data.allocation}/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -33,7 +34,7 @@ if(window.location.pathname == "/" || window.location.pathname == "/home"){
         var allocation = $(this).attr("data-allocation")
 
         var request = {
-            "url" : `http://localhost:3000/api/delete/${allocation}/${id}`,
+            "url" : `http://${adrs}:${port}/api/delete/${allocation}/${id}`,
             "method" : "DELETE"
         }
 
@@ -41,6 +42,9 @@ if(window.location.pathname == "/" || window.location.pathname == "/home"){
             $.ajax(request).done(function(response){
                 alert("Data Deleted Successfully!");
                 location.reload();
+            })
+            .error((e)=>{
+                console.log(e)
             })
         }
 

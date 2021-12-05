@@ -1,12 +1,8 @@
 const express = require('express')
-const morgan = require('morgan');
 const cookieParser = require('cookie-parser')
 const path = require('path')
 
 const app = express()
-
-// log requests
-app.use(morgan('tiny'));
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json() );

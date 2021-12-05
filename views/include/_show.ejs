@@ -27,11 +27,11 @@
         </td>
         <td><%= data[i].link %> </td>
         <td>
-            <a href="/update/<%= allocation %>?id=<%= data[i].id %> " class="btn border-shadow update">
+            <a href="/update/<%= allocation %>?id=<%= data[i].id %> " title="update <%= allocation %> <%= data[i].id %> " class="btn border-shadow update">
                 <span class="text-gradient"><i class="fas fa-pen-alt"></i></span>
             </a>
 
-            <a class="btn border-shadow delete" id = "delete" data-id="<%= data[i].id %>" data-allocation="<%= allocation %>">
+            <a class="btn border-shadow delete" data-id="<%= data[i].id %>" data-allocation="<%= allocation %>">
                 <span class="text-gradient"><i class="far fa-trash-alt"></i></span>
             </a>
         </td>

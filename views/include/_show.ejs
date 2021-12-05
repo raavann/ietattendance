@@ -1,6 +1,6 @@
 <% for( let i = 0; i < data.length; i++ ) { %>
 
-    <tr>
+    <tr style="border-radius: 15px;">
         <td><%= i + 1%> </td>
         <td><%= data[i].sub %> </td>
         <td><%
@@ -27,12 +27,12 @@
         </td>
         <td><%= data[i].link %> </td>
         <td>
-            <a href="/update/<%= allocation %>?id=<%= data[i].id %> " title="update <%= allocation %> <%= data[i].id %> " class="btn border-shadow update">
-                <span class="text-gradient"><i class="fas fa-pen-alt"></i></span>
+            <a href="/update/<%= allocation %>?id=<%= data[i].id %> " title="update <%= allocation %> <%= data[i].id %> " class="btn update">
+                <span ><i class="fas fa-pen-alt"></i></span>
             </a>
 
-            <a class="btn border-shadow delete" data-id="<%= data[i].id %>" data-allocation="<%= allocation %>">
-                <span class="text-gradient"><i class="far fa-trash-alt"></i></span>
+            <a class="btn delete" data-id="<%= data[i].id %>" data-allocation="<%= allocation %>">
+                <span><i class="far fa-trash-alt"></i></span>
             </a>
         </td>
     </tr>

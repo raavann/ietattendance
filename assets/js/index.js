@@ -16,7 +16,7 @@ $("#update").submit(function(event){
     })
 
     var request = {
-        "url" : `http://${adrs}/api/update/${data.allocation}/${data.id}`,
+        "url" : `https://${adrs}/api/update/${data.allocation}/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -34,7 +34,7 @@ if(window.location.pathname == "/" || window.location.pathname == "/home"){
         var allocation = $(this).attr("data-allocation")
 
         var request = {
-            "url" : `http://${adrs}/api/delete/${allocation}/${id}`,
+            "url" : `https://${adrs}/api/delete/${allocation}/${id}`,
             "method" : "DELETE"
         }
 

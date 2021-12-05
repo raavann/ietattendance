@@ -134,3 +134,52 @@ tr td:last-child { border-top-right-radius: 15px; border-bottom-right-radius: 15
     }
 
 }
+
+ /* add & update */
+ .form-title{
+    margin-top: 2em;
+}
+
+.form-title > h2{
+    padding: .5em 0;
+}
+
+.new{
+    max-width: 786px;
+    margin: auto;
+}
+
+#update .form-group,
+#add .form-group{
+    margin: .4em 0;
+    font-size: 17px;
+}
+
+#update .form-group input[type="text"],
+#add .form-group input[type="text"]{
+    width: 100%;
+    padding: .6em 1em;
+    margin: .5em 0;
+    border: none;
+    font-size: 1em;
+    border-radius: .2em;
+}
+
+#update .form-group .btn,
+#add .form-group .btn{
+    width: 100%;
+    padding: .7em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: .2em;
+    margin: .5em 0;
+    border: none;
+    background-color: transparent;
+    margin-bottom: 300px;
+}
+
+
+#update .form-group .btn:hover,
+#add .form-group .btn:hover{
+    background-color: #ffffff;
+} 

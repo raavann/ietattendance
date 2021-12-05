@@ -8,7 +8,7 @@ exports.homeRoutes = (req, res)=>{
     if (req.user){
         const allocation = verify(req.cookies.jwt, process.env.SESSION_SECRET).result.allocation;
 
-        axios.get(`http://${adrs}/api/find/${allocation}`)
+        axios.get(`http://localhost:3000/api/find/${allocation}`)
         .then( response => {
             res.render('home', { allocation, data : response.data.data });
         })

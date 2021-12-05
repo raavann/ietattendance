@@ -8,7 +8,7 @@ exports.homeRoutes = (req, res)=>{
     if (req.user){
         const allocation = verify(req.cookies.jwt, process.env.SESSION_SECRET).result.allocation;
 
-        axios.get(`http://${adrs}:${port}/api/find/${allocation}`)
+        axios.get(`http://${adrs}/api/find/${allocation}`)
         .then( response => {
             res.render('home', { allocation, data : response.data.data });
         })
@@ -39,7 +39,7 @@ exports.addRoutes = (req, res)=>{
 exports.updateRoutes = (req, res)=>{
     const allocation = req.params.allocation;
     const id = req.query.id;
-    axios.get(`http://${adrs}:${port}/api/find/${allocation}?id=${id}`)
+    axios.get(`http://${adrs}/api/find/${allocation}?id=${id}`)
     .then( function (response) {
         res.render('update', { allocation : allocation, data : response.data.data[0]});
     })

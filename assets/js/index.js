@@ -1,5 +1,5 @@
 const port = 3000;
-const adrs = '65.0.184.222'
+const adrs = 'www.autoattendance.ml'
 
 $("#add").submit( function (event) {
     alert("Data inserted successfully!");

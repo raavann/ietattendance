@@ -17,14 +17,14 @@ module.exports = {
 
     find: (allocation, id, callBack) => {
         if (id == -1){
-            pool.query(`select * from ${allocation}`, (error, results, fields) => {
+            pool.query(`select * from ${allocation} order by st asc`, (error, results, fields) => {
                 if (error) {
                     callBack(error);
                 }
                 return callBack(null, results);
             });
         } else {
-            pool.query(`select * from ${allocation} where id = ${id} order by st asc`, (error, results, fields) => {
+            pool.query(`select * from ${allocation} where id = ${id} `, (error, results, fields) => {
                 if (error) {
                     callBack(error);
                 }
